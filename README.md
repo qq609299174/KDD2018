@@ -1,2 +1,2 @@
 # KDD2018
-# Air Quality Forecasting competition
+Air Quality Forecasting competition
