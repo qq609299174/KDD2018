@@ -1,0 +1,13 @@
+#Boxplot
+aq<- read.csv("D:/KDD2018/sampleAQ.csv")
+monthOrder <- c('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec')
+aq$utc_time <- strptime(x = as.character(aq$utc_time),format = "%m/%d/%Y %H:%M")
+aq$Month <- factor(format(aq$utc_time, "%b"), levels = monthOrder)
+
+#DrawPlots
+ggplot(aq, aes(Month, PM2.5)) + geom_boxplot() + stat_boxplot(geom ='errorbar') + ggtitle("BoxplotByMonth")
+ggsave('~/BoxplotByMonth.png', width = 16, height = 9, dpi = 200)
+
+#ByWeekday&ByHours
+aq$Weekday<- format(aq$utc_time,format = "%a")
+aq$Hours<- format(aq$utc_time,format = "%H")
