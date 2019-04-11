@@ -1,0 +1,7 @@
+先把meostation merge到AQ大表里
+下载近期的AQ数据和MEO数据
+两个表的utc时间对齐
+应该就可以直接merge信息了
+然后每个Station就有了AQ数据和MEO数据
+同样的办法吧London的Weather Information也给merge进来
+似乎没有静态信息？？？
